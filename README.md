@@ -1,2 +1,7 @@
 # STEM3-Museumbeveiliging
-arduino code voor project museumbeveiliging in STEM3
+project museumbeveiliging in STEM3
+
+onderdelen: 
+* arduino-code
+* bedradingsschema
+* stroomkringschema
