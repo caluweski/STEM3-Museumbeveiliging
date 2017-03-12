@@ -5,11 +5,12 @@
 // de laser moet geschakeld zijn tussen een digitale uitgang (vb. pin4) en de massa; als je de laser niet wil sturen kun je ook +5V nemen ipv pin 4
 // de zoemer moet geschakeld zijn tussen een digitale uitgang (vb. pin12) en de massa
 
-int lichtsensorPin = A0                         // selecteer de invoerpin voor de lichtsensor
-int laserPin = 4                                // selecteer de uitvoerpin voor de laser
-int omgevingslichtWaarde = 750                  // lichtsensorWaarde met omgevingslicht
-int drempelwaarde = omgevingslichtWaarde - 100  // drempelwaarde om laseronderbreking te detecteren
-int alarmPin = 12                               // selecteer de uitvoerpin voor de zoemer
+int lichtsensorPin = A0;                         // selecteer de invoerpin voor de lichtsensor
+int laserPin = 4;                                // selecteer de uitvoerpin voor de laser
+int omgevingslichtWaarde = 750;                  // lichtsensorWaarde met omgevingslicht
+int drempelwaarde = (omgevingslichtWaarde-100);  // drempelwaarde om laseronderbreking te detecteren
+int lichtmeting = 0;                             // variablee om lichtwaarde in op te slaan
+int alarmPin = 12;                               // selecteer de uitvoerpin voor de zoemer
 
 void setup() {
   pinMode(laserPin, OUTPUT);
@@ -21,12 +22,12 @@ void loop() {
   // lichtwaarde meten
   lichtmeting = analogRead(lichtsensorPin);
   digitalWrite(laserPin, HIGH);
-  if(lichtmeting < (omgevingslichtWaarde-100)
+  if(lichtmeting < (omgevingslichtWaarde-100))
   {
-    digitalWrite(alarmpin, HIGH);
+    digitalWrite(alarmPin, HIGH);
   }
   else
   {
-    digitalWrite(alarmpin, LOW);
+    digitalWrite(alarmPin, LOW);
   }
 }
