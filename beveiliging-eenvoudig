@@ -9,7 +9,7 @@ int lichtsensorPin = A0                         // selecteer de invoerpin voor d
 int laserPin = 4                                // selecteer de uitvoerpin voor de laser
 int omgevingslichtWaarde = 750                  // lichtsensorWaarde met omgevingslicht
 int drempelwaarde = omgevingslichtWaarde - 100  // drempelwaarde om laseronderbreking te detecteren
-int alarmPin = 11                               // selecteer de uitvoerpin voor de zoemer
+int alarmPin = 12                               // selecteer de uitvoerpin voor de zoemer
 
 void setup() {
   pinMode(laserPin, OUTPUT);
