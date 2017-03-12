@@ -1,0 +1,32 @@
+// de lichtsensor moet geschakeld staan tussen +5V en een analoge ingang (hier A0)
+// een weerstand van 10 kilo-ohm moet geschakeld staan tussen de massa (GND) en de analoge ingang van de lichtsensor
+// de twee bovenstaande onderdelen zorgen ervoor dat er een variabele spanning op A0 komt, afhankelijk van de lichtinval
+
+// de laser moet geschakeld zijn tussen een digitale uitgang (vb. pin4) en de massa; als je de laser niet wil sturen kun je ook +5V nemen ipv pin 4
+// de zoemer moet geschakeld zijn tussen een digitale uitgang (vb. pin12) en de massa
+
+int lichtsensorPin = A0                         // selecteer de invoerpin voor de lichtsensor
+int laserPin = 4                                // selecteer de uitvoerpin voor de laser
+int omgevingslichtWaarde = 750                  // lichtsensorWaarde met omgevingslicht
+int drempelwaarde = omgevingslichtWaarde - 100  // drempelwaarde om laseronderbreking te detecteren
+int alarmPin = 11                               // selecteer de uitvoerpin voor de zoemer
+
+void setup() {
+  pinMode(laserPin, OUTPUT);
+  pinMode(alarmPin, OUTPUT);
+  
+}
+
+void loop() {
+  // lichtwaarde meten
+  lichtmeting = analogRead(lichtsensorPin);
+  digitalWrite(laserPin, HIGH);
+  if(lichtmeting < (omgevingslichtWaarde-100)
+  {
+    digitalWrite(alarmpin, HIGH);
+  }
+  else
+  {
+    digitalWrite(alarmpin, LOW);
+  }
+}
