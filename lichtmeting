@@ -4,7 +4,7 @@ int lichtsensorPin = A0;
 int laserPin = 4;
 
 void setup(){
-  pinmode(laserPin, OUTPUT);
+  pinMode(laserPin, OUTPUT);
   Serial.begin(9600);
 }
 
