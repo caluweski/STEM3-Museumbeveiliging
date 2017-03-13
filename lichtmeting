@@ -1,12 +1,15 @@
 // veronderstelling: lichtsensor is aangesloten op A0
-
+// laserled aangesloten op pin4
 int lichtsensorPin = A0;
+int laserPin = 4;
 
 void setup(){
+  pinmode(laserPin, OUTPUT);
   Serial.begin(9600);
 }
 
 void loop(){
+  digitalWrite(laserPin, HIGH);
   int lichtmeting = analogRead(lichtsensorPin);
   Serial.println(lichtmeting);
   delay(250);
