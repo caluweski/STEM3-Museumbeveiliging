@@ -7,8 +7,7 @@
 
 int lichtsensorPin = A0;                         // selecteer de invoerpin voor de lichtsensor
 int laserPin = 4;                                // selecteer de uitvoerpin voor de laser
-int omgevingslichtWaarde = 750;                  // lichtsensorWaarde met omgevingslicht
-int drempelwaarde = (omgevingslichtWaarde-100);  // drempelwaarde om laseronderbreking te detecteren
+int laserlichtWaarde = 990;                      // lichtsensorWaarde met laserlicht (te controleren met programma lichtmeting)
 int lichtmeting = 0;                             // variablee om lichtwaarde in op te slaan
 int alarmPin = 12;                               // selecteer de uitvoerpin voor de zoemer
 
@@ -22,7 +21,7 @@ void loop() {
   // lichtwaarde meten
   lichtmeting = analogRead(lichtsensorPin);
   digitalWrite(laserPin, HIGH);
-  if(lichtmeting < (omgevingslichtWaarde-100))
+  if(lichtmeting < (laserlichtWaarde-100))
   {
     digitalWrite(alarmPin, HIGH);
   }
