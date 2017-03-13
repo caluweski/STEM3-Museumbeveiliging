@@ -1,0 +1,12 @@
+// veronderstelling: lichtsensor is aangesloten op A0
+
+int lichtsensorPin = A0;
+
+void setup(){
+  Serial.begin(9600);
+}
+
+void loop(){
+  Serial.println(analogRead(lichtsensorPin));
+  delay(10);
+}
